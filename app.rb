@@ -10,7 +10,8 @@ end
 
 post "/" do
   $munch << params
-  template
+  redirect "/"
+
 end
 
 get "/places" do
