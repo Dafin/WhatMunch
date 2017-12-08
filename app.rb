@@ -4,11 +4,14 @@ require "sinatra/reloader"
 $munch = []
 
 get "/" do
-  $munch << params
   template
-
 end
 
+
+post "/" do
+  $munch << params
+  template
+end
 
 get "/places" do
  "This will list food vendors and their distance away"
@@ -17,9 +20,9 @@ end
 def template
   "
   <html>
-  <title>WhatMunch</title>
+  <title>WhatMunch App</title>
   <body>
-  <form action='/' method='get'>
+  <form action='/' method='post'>
   What: <input name='what'>
   Cost: <input name='cost'>
   <button type='submit'>add munch</button>
