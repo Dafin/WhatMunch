@@ -1,16 +1,22 @@
 require "sinatra"
 require "sinatra/reloader"
 
+$munch = []
+
 get "/" do
+
+  $munch << params
+
 "
 <html>
+<title>WhatMunch</title>
 <body>
 <form action='/' method='get'>
 What: <input name='what'>
 Cost: <input name='cost'>
 <button type='submit'>add munch</button>
 </form>
-<!-- food list goes here -->
+#{ $munch.inspect }
 </body>
 </html>
 "
