@@ -1,4 +1,5 @@
 require "sinatra"
+require "sinatra-contrib"
 require "sinatra/reloader"
 
 $munch = []
@@ -12,12 +13,17 @@ get "/places" do
 end
 
 post "/" do
+  append_munch_array
+  redirect "/"
+end
+
+def append_munch_array
  params.each do |key, value|
     $munch << "<div>#{ key } #{ value }</div>"
   end
 
-  redirect "/"
 end
+
 
 def template
   "
@@ -25,8 +31,8 @@ def template
   <title>WhatMunch App</title>
   <body>
   <form action='/' method='post'>
-  What: <input name='what'>
-  Cost: <input name='cost'>
+  What: <input name='what:'>
+  Cost: <input name='cost:'>
   <button type='submit'>add munch</button>
   </form>
   #{ $munch.join('') }
