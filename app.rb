@@ -4,7 +4,6 @@ require "sinatra/reloader"
 $munch = []
 
 get "/" do
-  munch_markup
   template
 end
 
@@ -13,20 +12,12 @@ get "/places" do
 end
 
 post "/" do
-  $munch << params
+ params.each do |key, value|
+    $munch << "<div>#{ key } #{ value }</div>"
+  end
+
   redirect "/"
 end
-
-
-def munch_markup
-  munch = []
-  $munch.each do |munch|
-    munch << "<div>#{ munch[:what] } $#{ munch[:cost] }</div>"
-  end
-  munch.join("<br>")
-end
-
-
 
 def template
   "
@@ -38,7 +29,7 @@ def template
   Cost: <input name='cost'>
   <button type='submit'>add munch</button>
   </form>
-  #{ $munch_markup }
+  #{ $munch.join('') }
   </body>
   </html>
   "
