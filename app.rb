@@ -1,5 +1,4 @@
 require "sinatra"
-require "sinatra-contrib"
 require "sinatra/reloader"
 
 $munch = []
@@ -31,11 +30,13 @@ def template
   <title>WhatMunch App</title>
   <body>
   <form action='/' method='post'>
-  What: <input name='what:'>
-  Cost: <input name='cost:'>
+  What: <input name='what:' required>
+  Cost: <input name='cost:' required type='number'>
   <button type='submit'>add munch</button>
   </form>
   #{ $munch.join('') }
+  <br>
+   #{ $munch.inspect }
   </body>
   </html>
   "
