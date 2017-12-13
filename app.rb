@@ -31,7 +31,7 @@ def template
   <body>
   <form action='/' method='post'>
   What: <input name='what:' required>
-  Cost: <input name='cost:' type='number' pattern='\d+(\.\d{2})?' required>
+  Cost: <input name='cost:' type='number' step=0.01 min= required>
   <button type='submit'>add munch</button>
   </form>
   #{ $munch.join('') }
