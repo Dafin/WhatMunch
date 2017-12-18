@@ -1,5 +1,6 @@
 require "sinatra"
-require "sinatra/reloader"
+
+
 
 $munch = []
 
@@ -17,8 +18,10 @@ post "/" do
 end
 
 def append_munch_array
- params.each do |key, value|
+ params[:thismunch].each do |key, value|
     $munch << "<div>#{ key } #{ value }</div>"
+
+  
   end
 
 end
@@ -30,13 +33,14 @@ def template
   <title>WhatMunch App</title>
   <body>
   <form action='/' method='post'>
-  What: <input name='what:' required>
-  Cost: <input name='cost:' type='number' step=0.01 min= required>
+  What: <input name='thismunch[what:]' required>
+  Cost: <input name='thismunch[cost:]' type='number' step=0.01 min= required>
   <button type='submit'>add munch</button>
-  </form>
+  </form> 
+
   #{ $munch.join('') }
+
   <br>
-   #{ $munch.inspect }
   </body>
   </html>
   "
