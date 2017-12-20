@@ -2,7 +2,7 @@ require "sinatra"
 
 
 
-$munch = []
+@@munch = []
 
 get "/" do
   template
@@ -19,7 +19,7 @@ end
 
 def append_munch_array
  params[:thismunch].each do |key, value|
-    $munch << "<div>#{ key } #{ value }</div>"
+    @@munch << "<div>#{ key } #{ value }</div>"
 
   
   end
@@ -38,7 +38,7 @@ def template
   <button type='submit'>add munch</button>
   </form> 
 
-  #{ $munch.join('') }
+  #{ @@munch.join('') }
 
   <br>
   </body>
