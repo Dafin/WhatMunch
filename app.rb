@@ -2,6 +2,7 @@ require "sinatra"
 
 
 $munch = []
+$running_total = 0
 
 get "/" do
   template
@@ -13,6 +14,7 @@ end
 
 post "/" do
   append_munch_array
+  running_total 
   redirect "/"
 end
 
@@ -23,6 +25,9 @@ def append_munch_array
 
 end
 
+def running_total
+  $running_total = params[:thismunch][:cost].to_i
+end
 
 def template
   "
@@ -36,6 +41,9 @@ def template
   </form> 
 
   #{ $munch.join('') }
+  <hr>Running Total is:</hr>
+  #{ $running_total.inspect }
+
 
   <br>
   </body>
