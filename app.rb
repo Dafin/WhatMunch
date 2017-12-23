@@ -13,7 +13,9 @@ get "/places" do
 end
 
 post "/" do
+  @last_total = params['thismunch']['cost'].to_i
   append_munch_array
+  p @last_total
   running_total 
   redirect "/"
 end
@@ -26,10 +28,10 @@ def append_munch_array
 end
 
 def running_total
-  p params
-  p params['thismunch']
-  p params['thismunch']['cost']
-  $running_total = params['thismunch']['cost']
+  # p params
+  # p params['thismunch']
+  # p params['thismunch']['cost']
+  $running_total = @last_total + $running_total
 end
 
 def template
