@@ -20,13 +20,16 @@ end
 
 def append_munch_array
   params[:thismunch].each do |key, value|
-    $munch << "<div>#{ key } #{ value }</div>"
+    $munch << "<div>#{ key }: #{ value }</div>"
   end
 
 end
 
 def running_total
-  $running_total = params[:thismunch][:cost].to_i
+  p params
+  p params['thismunch']
+  p params['thismunch']['cost']
+  $running_total = params['thismunch']['cost']
 end
 
 def template
@@ -35,14 +38,14 @@ def template
   <title>WhatMunch App</title>
   <body>
   <form action='/' method='post'>
-  What: <input name='thismunch[what:]' required>
-  Cost: <input name='thismunch[cost:]' type='number' step=0.01 min= required>
+  What: <input name='thismunch[what]' required>
+  Cost: <input name='thismunch[cost]'  type='number' step=0.01 min= required>:
   <button type='submit'>add munch</button>
   </form> 
 
   #{ $munch.join('') }
   <hr>Running Total is:</hr>
-  #{ $running_total.inspect }
+  #{ $running_total}
 
 
   <br>
