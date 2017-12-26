@@ -38,6 +38,8 @@ def template
   "
   <html>
   <title>WhatMunch App</title>
+  <link rel='stylesheet' href='/css/normalize.min.css'>
+  <link rel='stylesheet' href='/css/main.css'>
   <body>
   <form action='/' method='post'>
   What: <input name='thismunch[what]' required>
