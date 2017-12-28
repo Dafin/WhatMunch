@@ -22,7 +22,7 @@ end
 
 def append_munch_array
   params[:thismunch].each do |key, value|
-    $munch << "<div>#{ key }: #{ value }</div>"
+    $munch << "<tr><td>#{ key }:</td><td> #{ value }</td></tr>"
   end
 
 end
@@ -37,23 +37,28 @@ end
 def template
   "
   <html>
-  <title>WhatMunch App</title>
-  <link rel='stylesheet' href='/css/normalize.min.css'>
-  <link rel='stylesheet' href='/css/main.css'>
-  <body>
-  <form action='/' method='post'>
-  What: <input name='thismunch[what]' required>
-  Cost: <input name='thismunch[cost]'  type='number' step=0.01 min= required>:
-  <button type='submit'>add munch</button>
-  </form> 
+    <head>
+    <title>WhatMunch App</title>
+    <link rel='stylesheet' href='/css/normalize.min.css'>
+    <link rel='stylesheet' href='/css/main.css'>
+    <div class='main-container'</div>
+    </head>
+    <body>
+    <div class='header-container'>
+    <h1 class='title'>WhatMunch</h1></div>
 
-  #{ $munch.join('') }
-  <hr>Running Total is:</hr>
-  #{ $running_total}
-
-
-  <br>
-  </body>
+    <form action='/' method='post'>
+    What: <input name='thismunch[what]' required>
+    Cost: <input name='thismunch[cost]'  type='number' step=0.01 min= required>:
+    <button type='submit'>add munch</button>
+    </form> 
+    <table>
+    #{ $munch.join('') }
+    <hr>Running Total is:</hr>
+    #{ $running_total}
+    </table>
+    </body>
+    </div>
   </html>
   "
 end
