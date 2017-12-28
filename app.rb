@@ -5,7 +5,7 @@ $munch = []
 $running_total = 0
 
 get "/" do
-  template
+    erb :index
 end
 
 get "/places" do
@@ -32,33 +32,4 @@ def running_total
   # p params['thismunch']
   # p params['thismunch']['cost']
   $running_total = @last_total + $running_total
-end
-
-def template
-  "
-  <html>
-    <head>
-    <title>WhatMunch App</title>
-    <link rel='stylesheet' href='/css/normalize.min.css'>
-    <link rel='stylesheet' href='/css/main.css'>
-    <div class='main-container'</div>
-    </head>
-    <body>
-    <div class='header-container'>
-    <h1 class='title'>WhatMunch</h1></div>
-
-    <form action='/' method='post'>
-    What: <input name='thismunch[what]' required>
-    Cost: <input name='thismunch[cost]'  type='number' step=0.01 min= required>:
-    <button type='submit'>add munch</button>
-    </form> 
-    <table>
-    #{ $munch.join('') }
-    <hr>Running Total is:</hr>
-    #{ $running_total}
-    </table>
-    </body>
-    </div>
-  </html>
-  "
 end
