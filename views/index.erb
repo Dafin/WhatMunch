@@ -3,23 +3,31 @@
     <title>WhatMunch App</title>
     <link rel='stylesheet' href='/css/normalize.min.css'>
     <link rel='stylesheet' href='/css/main.css'>
-    <div class='main-container'</div>
-    </head>
-    <body>
+  </head>
+
+  <body>
+    <div class='main-container'>
       <div class='header-container'>
-        <h1 class='title'>WhatMunch</h1></div>
+        <h1 class='title'>WhatMunch</h1>
+      </div>
 
+      <section id="form-group">
         <form action='/' method='post'>
-          What: <input name='thismunch[what]' required>
-          Cost: <input name='thismunch[cost]'  type='number' step=0.01 min= required>:
-          <button type='submit'>add munch</button>
-        </form> 
-        <table>
+          <input name='thismunch[what]' type="text"  placeholder="Food item" id
+        ="item-input" required>
 
-          <%= $munch.join('') %>
-          <hr>Running Total is: £<%= $running_total %></hr>
+          <input name='thismunch[cost]'  type='number' id="out-of-range-input" step=0.01 min=0 max=100 required placeholder="£" size="200000">
+          <span class="help-text"></span>
+          <hr>
+          <input type='submit' id="addButton" value="Add Munch">
+        </form>
+      </section>
 
-        </table>
-      </body>
+      <table>
+        <%= $munch.join('') %>
+        Running Total is: £<%= $running_total %>
+      </table>
+
     </div>
-    </html>
+  </body>
+  </html>
