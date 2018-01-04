@@ -1,3 +1,4 @@
+ <!DOCTYPE html>
   <html>
   <head>
     <title>WhatMunch App</title>
@@ -7,14 +8,16 @@
 
   <body>
     <div class='main-container'>
-      <div class='header-container'>
+
+      <section id='header-container'>
         <h1 class='title'>WhatMunch</h1>
-      </div>
+      </section>
 
       <section id="form-group">
+        <h3>Enter Food item, then cost:</h3>
         <form action='/' method='post'>
           <input name='thismunch[what]' type="text"  placeholder="Food item" id
-        ="item-input" required>
+          ="item-input" required>
 
           <input name='thismunch[cost]'  type='number' id="out-of-range-input" step=0.01 min=0 max=100 required placeholder="£" size="200000">
           <span class="help-text"></span>
@@ -23,10 +26,12 @@
         </form>
       </section>
 
-      <table>
-        <%= $munch.join('') %>
-        Running Total is: £<%= $running_total %>
-      </table>
+      <section id="results-table">
+          <h2>Running Total is: £<%= $running_total %></h2>
+        <table>
+          <%= $munch.join('') %>
+        </table>
+      </section>
 
     </div>
   </body>
