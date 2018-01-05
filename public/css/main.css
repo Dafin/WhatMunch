@@ -1,0 +1,41 @@
+* {
+  background-color: #26292C;
+}
+
+hr {
+  /*display: block;*/
+  height: 1px;
+  border: 0;
+  border-bottom: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+body {
+  font: 26px Helvetica, Helvetica Neue, Arial;
+  color: #B6D877;
+}
+
+
+.title {
+  color: white;
+}
+
+table:nth-child(even){ 
+  background-color:yellow;
+}
+
+
+td:nth-child(even){
+  color: orange; 
+  background-color:gray;
+}
+
+
+.header-container {
+  border-bottom: 1px solid gray;
+}
+
+
+.main-container {
+  padding-left: 20px}
