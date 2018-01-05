@@ -16,11 +16,13 @@
       <section id="form-group">
         <h3>Enter Food item, then cost:</h3>
         <form action='/' method='post'>
+        <fieldset id="data-entry">
           <input name='thismunch[what]' type="text"  placeholder="Food item" id
           ="item-input" required>
 
-          <input name='thismunch[cost]'  type='number' id="out-of-range-input" step=0.01 min=0 max=100 required placeholder="£" size="200000">
+          <input name='thismunch[cost]'  type='number' id="out-of-range-input" step=0.01 min=0 max=100 required placeholder="£">
           <span class="help-text"></span>
+        </fieldset>
           <hr>
           <input type='submit' id="addButton" value="Add Munch">
         </form>
