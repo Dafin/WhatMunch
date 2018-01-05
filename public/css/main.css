@@ -1,41 +1,131 @@
-* {
+html {
   background-color: #26292C;
+  -webkit-transform-style: preserve-3d;
 }
 
-hr {
-  /*display: block;*/
-  height: 1px;
-  border: 0;
-  border-bottom: 1px solid #ccc;
-  margin: 1em 0;
-  padding: 0;
+hr{
+  border-color: black;
 }
 
 body {
   font: 26px Helvetica, Helvetica Neue, Arial;
+}
+
+
+h1.title {
+  color: gray;
+  text-shadow: 2px 2px 8px black;
+}
+
+
+h2{
+  font-size: medium;
+}
+
+h3{
+  color: gray;
+  font-size: small;
+}
+
+
+
+#results-table {
   color: #B6D877;
-}
-
-
-.title {
-  color: white;
-}
-
-table:nth-child(even){ 
-  background-color:yellow;
 }
 
 
 td:nth-child(even){
   color: orange; 
-  background-color:gray;
+  background-color:black;
+  font-family: "Lucida Console", Monaco, monospace;
+}
+
+td:nth-child(odd){
+  color: yellow; 
+  font-family: "Lucida Console", Monaco, monospace;
 }
 
 
-.header-container {
-  border-bottom: 1px solid gray;
+#header-container {
+  border-top: 1px solid gray;
 }
 
+#form-group {
+  width: 100%;
+}
 
 .main-container {
-  padding-left: 20px}
+  padding: 0 20px 0 20px;
+}
+
+
+input[type=text]{
+  background-color: black;
+  color: orange;
+}
+
+input[type=number]{
+  background-color: black;
+  color: orange;
+}
+
+input[type=text]:focus {
+  background-color: white;
+  color: black;
+}
+
+
+input[type=number]:focus {
+  background-color: white;
+  color: black;
+}
+
+
+input[type=submit] {
+  padding:5px 15px; 
+  border:0 none;
+  cursor:pointer;
+  width:100%;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  background: #b3d962;
+  background-image: -webkit-linear-gradient(top, #b3d962, #516470);
+  background-image: -moz-linear-gradient(top, #b3d962, #516470);
+  background-image: -ms-linear-gradient(top, #b3d962, #516470);
+  background-image: -o-linear-gradient(top, #b3d962, #516470);
+  background-image: linear-gradient(to bottom, #b3d962, #516470);
+  color: white; 
+}
+
+input[type=submit]:hover {
+  padding:5px 15px; 
+  cursor:pointer;
+  width:100%;
+  background: #b3d962;
+  background-image: -webkit-linear-gradient(top, #b3d962, #63d934);
+  background-image: -moz-linear-gradient(top, #b3d962, #63d934);
+  background-image: -ms-linear-gradient(top, #b3d962, #63d934);
+  background-image: -o-linear-gradient(top, #b3d962, #63d934);
+  background-image: linear-gradient(to bottom, #b3d962, #63d934);
+}
+
+
+input:out-of-range + .help-text::before {
+  content: 'Too much!';
+}
+
+#item-input{
+  float: left;
+  width: 86%
+}
+#out-of-range-input{
+  float: right;
+  width: :14%;
+}
+
+fieldset{
+  border: none;
+  display: block;
+  padding: none;
+  margin: 0;
+}
