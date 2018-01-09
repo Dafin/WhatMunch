@@ -30,11 +30,48 @@
 
       <section id="results-table">
           <h2>Running Total is: £<%= $running_total %></h2>
-        <table>
-          <%= $munch.join('') %>
-        </table>
-      </section>
 
+<!-- 
+        <table  width="80%>
+          <%= $munch.join('') %>
+        </table> -->
+xx
+<table cellspacing="0" cellpadding="0" border="0"">
+  <tr>
+    <td>
+       <table cellspacing="0" cellpadding="1" border="1" width="600" >
+         <tr style="color:white;background-color:grey">
+            <th>Food Item</th>
+            <th>Cost</th>
+         </tr>
+       </table>
+    </td>
+  </tr>
+  <tr>
+    <td>
+       <div style="width:600px; height:400px; overflow:auto;">
+         <table cellspacing="0" cellpadding="1" border="0" width="600" >
+
+              zz<tr> <%= $munch.join(',') %></tr>x<br>z
+
+           <tr>
+             <td>new item</td>
+             <td>new item</td>
+           </tr>
+    
+         </table>  
+       </div>
+    </td>
+  </tr>
+</table>
+
+
+
+
+
+
+
+      </section>
     </div>
   </body>
   </html>

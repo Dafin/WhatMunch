@@ -22,7 +22,10 @@ end
 
 def append_munch_array
   params[:thismunch].each do |key, value|
-    $munch << "<tr><td>#{ key }:</td><td> #{ value }</td></tr>"
+    # $munch << "<tr><td>#{ key }:</td><td> #{ value }</td></tr>"
+    
+
+    $munch << "<td>#{ value }</td>"
   end
 
 end
