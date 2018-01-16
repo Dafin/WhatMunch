@@ -11,4 +11,24 @@ describe 'WhatMunch' do
     get '/'
     last_response.status.should == 200
   end
+
+
+  describe 'When creating a food item with a decimal value',:type => :feature do
+      it 'renders the food item value correctly' do
+        visit '/'
+        fill_in('item-input', with: 'Pizza')
+        fill_in('out-of-range-input', with: '10.5')
+        click_link_or_button('Add Munch')
+        within('#results-table') do
+          expect(page).to have_content('Pizza')
+          expect(page).to have_content('10.5')
+        end
+
+        within('#results-table h2') do
+        expect(page).to have_content('10.5')
+        end
+    
+      end
+  end
+
 end
