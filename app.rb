@@ -13,7 +13,7 @@ get "/places" do
 end
 
 post "/" do
-  @last_total = params['thismunch']['cost'].to_i
+  @last_total = params['thismunch']['cost'].to_f
   append_munch_array
   p @last_total
   running_total 
@@ -31,5 +31,5 @@ def running_total
   # p params
   # p params['thismunch']
   # p params['thismunch']['cost']
-  $running_total = @last_total + $running_total
+  $running_total = (@last_total + $running_total)
 end
