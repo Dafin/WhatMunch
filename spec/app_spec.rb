@@ -1,6 +1,10 @@
 require File.dirname(__FILE__) + '/spec_helper'
 
 describe 'WhatMunch' do
+  before(:each) do
+   $munch = []
+   $running_total = 0
+  end
   include Rack::Test::Methods
 
   def app
@@ -31,4 +35,21 @@ describe 'WhatMunch' do
       end
   end
 
+  describe 'When adding two food items whose total cost have decimal values',:type => :feature do
+      it 'renders the food item value correctly' do
+        visit '/'
+        fill_in('item-input', with: 'Pizza')
+        fill_in('out-of-range-input', with: '10.5')
+        click_link_or_button('Add Munch')
+
+        fill_in('item-input', with: 'Kebab')
+        fill_in('out-of-range-input', with: '9.99')
+        click_link_or_button('Add Munch')
+
+
+        within('#results-table h2') do
+          expect(page).to have_content(/20.49$/)
+        end
+      end
+    end
 end
