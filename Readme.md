@@ -5,9 +5,9 @@
 
 This is a rudimentary bill splitting/budgeting thingy (being) built in Ruby, using Sinatra and RSpec.
 
-It's hosted on [heroku](https://stark-waters-35727.herokuapp.com), to [use](# how-to-use) straight away.
+It's hosted on [heroku](https://stark-waters-35727.herokuapp.com), to [use](#how-to-use) straight away.
 
-Please _don't_ use this with real currency! read the [notes](# notes).
+Please _don't_ use this with real currency! read the [notes](#notes).
 
 ### Installation
 
@@ -26,7 +26,7 @@ Please _don't_ use this with real currency! read the [notes](# notes).
 
 2. Press tab / touch or select the next input to enter the cost of the previous item.
 
-3  Press 'Add Munch', and continue to add further items, the total running cost will be displayed below the button
+3.  Press 'Add Munch', and continue to add further items, the total running cost will be displayed below the button
 
 ### Testing
 
@@ -35,6 +35,6 @@ Please _don't_ use this with real currency! read the [notes](# notes).
 
 ### Notes
 
-Don't use this in the real life with real currency, due to rounding errors in float arithmetic, there will be inaccuracies! 
+Don't use this in the real life with real currency, due to rounding errors in **float arithmetic**, there will be inaccuracies! 
 
 **Global variables** are being used here. This is generally bad practice, however, as there is no database or data persistence, this should not be an issue.
