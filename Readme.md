@@ -30,11 +30,11 @@ Please _don't_ use this with real currency! read the [notes](#notes).
 
 ### Testing
 
-1. Navigate to the app folder and run `rspec spec/`
+* Navigate to the app folder and run `rspec spec/`
 
 
 ### Notes
 
-Don't use this in the real life with real currency, due to rounding errors in **float arithmetic**, there will be inaccuracies! 
-
-**Global variables** are being used here. This is generally bad practice, however, as there is no database or data persistence, this should not be an issue.
+> Don't use this in the real life with real currency, due to rounding errors in **float arithmetic**, there will be inaccuracies! 
+>
+> **Global variables** are being used here. This is generally bad practice, however, as there is no database or data persistence, this should not be an issue. Servers logs are captured by [LogDNA](https://logdna.com).
