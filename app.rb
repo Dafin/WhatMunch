@@ -31,5 +31,5 @@ def running_total
   # p params
   # p params['thismunch']
   # p params['thismunch']['cost']
-  $running_total = (@last_total + $running_total)
+  $running_total = (@last_total + $running_total).round(2)
 end
