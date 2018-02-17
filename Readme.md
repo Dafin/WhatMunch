@@ -1,5 +1,7 @@
 # WhatMunch :fork_and_knife: :yum: :money_with_wings:
 
+[![Build Status](https://travis-ci.org/Dafin/WhatMunch.svg?branch=master)](https://travis-ci.org/Dafin/WhatMunch)
+
 ### What is this?
 
 
