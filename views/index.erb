@@ -20,7 +20,7 @@
           <input name='thismunch[what]' type="text"  placeholder="Food item" id
           ="item-input" required>
 
-          <input name='thismunch[cost]'  type='number' id="out-of-range-input" step=0.01 min=0 max=100 required placeholder="£">
+          <input name='thismunch[cost]'  type='number' id="out-of-range-input" step=0.01 min=0 max=<%= $budget %> required placeholder="£">
           <span class="help-text"></span>
         </fieldset>
           <input type='submit' id="addButton" value="Add Munch">
@@ -29,6 +29,8 @@
 
       <section id="results-table">
           <h2>Running Total is: £<%= $running_total %></h2>
+          <h3>Budget is: £ <input type="number" name="budget" value="<%= $budget %>"disabled></h3>
+
         <table>
           <%= $munch.join('') %>
         </table>

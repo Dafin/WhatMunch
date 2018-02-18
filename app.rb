@@ -1,15 +1,11 @@
 require "sinatra"
 
-
 $munch = []
 $running_total = 0
+$budget = 100
 
 get "/" do
     erb :index
-end
-
-get "/places" do
- "This will list food vendors and their distance away"
 end
 
 post "/" do
@@ -28,8 +24,5 @@ def append_munch_array
 end
 
 def running_total
-  # p params
-  # p params['thismunch']
-  # p params['thismunch']['cost']
   $running_total = (@last_total + $running_total).round(2)
 end
