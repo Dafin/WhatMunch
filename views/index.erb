@@ -2,7 +2,7 @@
   <html>
   <head>
     <title>WhatMunch App</title>
-    <link rel='stylesheet' href='/css/normalize.min.css'>
+    <style type="text/css">@import url('stylesheets/main.css')</style>
   </head>
 
   <body>
@@ -28,7 +28,7 @@
 
       <section id="results-table">
           <h2>Running Total is: £<%= $running_total %></h2>
-          <h3>Budget is: £ <input type="number" name="budget" value="<%= $budget %>"disabled></h3>
+          <h3>Budget is: £ <input type="number" name="budget" value="<%= $budget %>" disabled></h3>
 
         <table>
           <%= $munch.join('') %>
