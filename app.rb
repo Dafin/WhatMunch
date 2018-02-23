@@ -4,8 +4,10 @@ $munch = []
 $running_total = 0
 $budget = 100
 
+    # scss :stylesheet, :style => :expanded
 get "/" do
-    erb :index
+    erb :index 
+
 end
 
 post "/" do
