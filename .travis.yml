@@ -2,3 +2,5 @@ language: ruby
 rvm:
   - 2.4.3
 #  - 2.4.3-p205
+script: 
+  - bundle exec rspec spec/
