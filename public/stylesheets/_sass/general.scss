@@ -1,9 +1,12 @@
 @import
-  './imports/colours'
+  './imports/_colours',
+  './imports/_variables'
 ;
 
 h1 {
 color: $asbestos;
+font-size: $font-huge;
+font-family: $sans;
 
 }
 
