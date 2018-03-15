@@ -1,0 +1,10 @@
+@import './imports/_variables',
+        './imports/_colours';
+
+footer {
+	display: block;
+	width: 100%;
+	background: $secondary;
+	padding-top: $space-med;
+	padding-bottom: $space-med;
+}
