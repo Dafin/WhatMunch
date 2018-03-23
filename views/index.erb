@@ -23,15 +23,21 @@
       </fieldset>
       <button class="btn-raised btn--green">Add Munch</button>
     </form>
+    <h2>Running Total is: £<%= $running_total %></h2>
   </section>
 
   <section id="results-table">
-    <h2>Running Total is: £<%= $running_total %></h2>
     <h3>Budget is: £ <input type="number" name="budget" value="<%= $budget %>" disabled></h3>
 
-    <table>
-      <%= $munch.join('') %>
+    <table class="tile">
+      <tr class="table-header">
+        <td>Item</td>
+        <td>Cost</td>
+      </tr>
+      <tr>
+        <%= $munch.join('') %>
     </table>
+
   </section>
 
   </div>
