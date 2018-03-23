@@ -20,11 +20,25 @@ end
 
 def append_munch_array
   params[:thismunch].each do |key, value|
-    $munch << "<tr><td>#{ key }:</td><td> #{ value }</td></tr>"
+    # $munch << "<tr><td>#{ key }:</td><td> #{ value }</td></tr>"
+    $munch << "<td>#{ value }</td>"
+
+      if "#{ value }".numeric? 
+         $munch << "</tr>"
+         return
+       end
+
   end
 
 end
 
 def running_total
   $running_total = (@last_total + $running_total).round(2)
+end
+
+
+class String
+  def numeric?
+    Float(self) != nil rescue false
+  end
 end
