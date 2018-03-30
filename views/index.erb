@@ -23,12 +23,17 @@
       </fieldset>
       <button class="btn-raised btn--green">Add Munch</button>
     </form>
-    <h2>Running Total is: £<%= $running_total %></h2>
   </section>
 
-  <section id="results-table">
-    <h3>Budget is: £ <input type="number" name="budget" value="<%= $budget %>" disabled></h3>
+<section class="card">
+    <h5>Running Total is: £<%= $running_total %></h5>
+</section>
+  
+  
 
+  <section id="results-table">
+<!--     <h4>Budget is: £ <input type="number" name="budget" value="<%= $budget %>" disabled></h4>
+ -->
     <table class="tile">
       <tr class="table-header">
         <td>Item</td>
