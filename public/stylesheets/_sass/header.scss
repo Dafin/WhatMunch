@@ -4,10 +4,12 @@ header {
 	width: 100%;
 	padding-top: $space-small;
 	padding-bottom: $space-small;
-	background: $primary;
+	background: linear-gradient(to bottom right, $primary, $secondary);
 	margin-bottom: $space-big*1.75;
 	h1, h2, h3 {
 		color: white;
+	  text-shadow: 2px 2px 4px #000000;
+
 	}
 	@media screen and (max-width: $media-med) {
 		margin-bottom: $space-big*0.85;
