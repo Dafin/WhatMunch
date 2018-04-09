@@ -7,9 +7,9 @@
 
 <body>
   <header class="container">
-    <h1 class='title'>WhatMunch</h1>
+    <h1 class='title m--1 m-s--0'>WhatMunch</h1>
   </header>
-  <div class='main-container'>
+  <div class='main-container container container--wrap--t g--10 m--1'>
 
 
   <section id="form-group" class="tile">
@@ -23,15 +23,13 @@
       </fieldset>
       <button class="btn-raised btn--green">Add Munch</button>
     </form>
+        <h5>Running Total is: £<%= $running_total %></h5>
+
   </section>
 
-<section class="card">
-    <h5>Running Total is: £<%= $running_total %></h5>
-</section>
-  
   
 
-  <section id="results-table">
+  <section id="results-table" class=" m--0">
 <!--     <h4>Budget is: £ <input type="number" name="budget" value="<%= $budget %>" disabled></h4>
  -->
     <table class="tile">
@@ -44,13 +42,17 @@
     </table>
 
   </section>
-
+<!-- 
+<section class="card">
+    <h5>Running Total is: £<%= $running_total %></h5>
+</section>
+   -->
   </div>
   <footer>
     <div class="right">
      <input type="checkbox" id="modal-1">
      <label class="modal-trigger" for="modal-1">About</label>
-      <div class="modal-content right">
+      <div class="modal-content">
       <p><a href="https://github.com/Dafin/WhatMunch"><img src="./img/gh.png" alt="Gihub Logo"></a></p>
       </div>
     </div>
